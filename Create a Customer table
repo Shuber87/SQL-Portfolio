@@ -1,0 +1,9 @@
+Create table Customers (
+CustomerID INT Primary Key,
+FirstName VARCHAR(25),
+LastName VARCHAR(25),
+Street VARCHAR(50),
+City VARCHAR(50),
+State VARCHAR(25),
+ZipCode VARCHAR(10),
+Telephone VARCHAR (15));
