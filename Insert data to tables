@@ -1,0 +1,6 @@
+INSERT INTO Customers VALUES (104,'Tom','Riddle','Knockturn_Alley','London','UK',95922,66666666),
+(105,'Draco','Malfoy','Malfoy_Manor','Wiltshire','UK','15675',66787543),
+(106,'Neville','Longbottom','Grans_House','London','UK',64992,45799234),
+(107,'Luna','Lovegood','Ottery_St','Devon','UK',33321,55578932),
+(108,'Lavender','Brown','WonWon_Heart','London','UK',92345,01923456),
+(109,'Cedric','Diggory','Afterlife_Lane','London','UK',93837,00198768);
