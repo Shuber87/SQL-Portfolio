@@ -1,0 +1,14 @@
+Create table Orders (
+OrderID INT primary key,
+CustomerID INT,
+SKU VARCHAR(20),
+Description VARCHAR(50),
+Foreign Key (CustomerID) references Customers (CustomerID));
+
+Create table RMA (
+RMAID INT Primary Key,
+OrderID INT,
+Step VARCHAR(50),
+Status VARCHAR(15),
+Reason VARCHAR(15),
+Foreign Key (OrderID) references Orders (OrderID));
