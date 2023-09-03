@@ -1,0 +1,14 @@
+select firstName, lastName, jobTitle, offices.city from employees inner join offices on employees.officeCode = offices.officeCode where state = 'CA'
+
+SELECT orders.orderNumber, orderDate, productName, quantityOrdered, priceEach, quantityOrdered*priceEach AS TOTAL_PRICED
+FROM orders INNER JOIN orderdetails ON orders.orderNumber = orderdetails.orderNumber
+INNER JOIN products ON orderdetails.productCode=products.productCode
+WHERE orders.orderNumber IN(10330, 10338, 10194) ORDER BY orders.orderNumber, productName;
+
+SELECT CONCAT(employees.firstName, " ", employees.lastName) AS SALES_REP, customers.customerName AS CUSTOMER
+FROM employees INNER JOIN customers ON employees.employeeNumber = customers.salesRepEmployeeNumber
+WHERE employees.employeeNumber = 1504;
+
+SELECT CONCAT(employees.firstName, " ", employees.lastName) AS SALES_REP, customers.customerName AS CUSTOMER
+FROM employees INNER JOIN customers ON employees.employeeNumber = customers.salesRepEmployeeNumber
+WHERE UPPER(customers.state) = 'MA';
