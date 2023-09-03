@@ -1,0 +1,17 @@
+Select COUNT(*) AS PRODUCT_SALES_NUMBER, orders.SKU AS PRODUCT_SKU, orders.Description AS PRODUCT_DESCRIPTION
+FROM orders INNER JOIN Customers ON orders.CustomerID = Customers.CustomerID
+WHERE UPPER(State) IN ("Virgina","North Carolina","South Carolina","Georgia")
+GROUP BY PRODUCT_SKU
+ORDER BY PRODUCT_SALES_NUMBER
+Limit 9;
+
+Select COUNT(*) AS RETURNED_AMOUNT, orders.SKU AS PRODUCT_SKU, orders.Description AS PRODUCT_DESCRIPTION
+FROM orders INNER JOIN RMA ON orders.OrderID = RMA.OrderId
+WHERE UPPER(Status) = "Complete" 
+GROUP BY PRODUCT_SKU
+ORDER BY RETURNED_AMOUNT DESC;
+
+Select COUNT(*) AS RETURNED_AMOUNT, orders.SKU AS PRODUCT_SKU, orders.Description AS PRODUCT_DESCRIPTION
+FROM orders INNER JOIN RMA ON orders.CustomerID = RMA.OrderID INNER JOIN Customers ON orders.CustomerID = Customers.CustomerID
+WHERE UPPER(State) IN ("Washington","Oregon","Idaho","Montana")
+AND UPPER(Status) = "Complete" GROUP BY PRODUCT_SKU ORDER BY RETURNED_AMOUNT;
